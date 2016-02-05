@@ -36,7 +36,8 @@
 
 				<div class="collapse navbar-collapse" id="js-navbar-collapse">
 					<ul class="nav navbar-nav blue">
-					  <li ng-class="(page==1) ? 'active' : ''"><a ng-click="goTo('dashboard')">Dashboard</a></li>					  
+					  <li ng-class="(page==1) ? 'active' : ''"><a ng-click="goTo('dashboard')">Dashboard</a></li>
+					  <li ng-class="(page==2) ? 'active' : ''"><a ng-click="goTo('performance')">Performance</a></li>						  
 					</ul>
 				</div>
 			<!-- </div> -->
@@ -51,7 +52,7 @@
 				<a class="btn btn-success" ng-click="clearAll()">Clear Selections</a>
 			</div>
 		</div>
-        
+
         <div ui-view="header"></div>
 			
         <div ui-view="main"></div>

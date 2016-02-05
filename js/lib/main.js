@@ -1,4 +1,3 @@
-/*jshint unused: vars */
 var scriptsUrl = 'http://localhost:4848/extensions/angularTemplate/';
 
 require.config({
@@ -10,6 +9,7 @@ require.config({
 	'ui.router': scriptsUrl + 'js/vendor/angular-ui-router/release/angular-ui-router.min',
 	'app': scriptsUrl + 'js/lib/app',
     'controller.dashboard': scriptsUrl + 'js/controllers/dashboard',
+    'controller.performance': scriptsUrl + 'js/controllers/performance',
     'controller.header': scriptsUrl + 'js/controllers/header',
     'directive.getObject': scriptsUrl + 'js/directives/getObject',
 	'service.api': scriptsUrl + 'js/services/api',
@@ -46,12 +46,26 @@ define([
 				},
 			}
 	    })
+	    .state('performance', {
+			url: "/performance",
+	    	views: {
+				'header': { 
+					templateUrl: "views/header.html",
+					controller: 'controller.header' 
+				},
+				'main': { 
+					templateUrl: "views/performance.html",
+					controller: 'controller.performance' 
+				},
+			}
+	    })
 	});
     require([
     	'domReady!', 
     	'js/qlik',
     	'angular',
     	'controller.dashboard',
+    	'controller.performance',
     	'controller.header',
     	'service.api',
     	'service.utility',

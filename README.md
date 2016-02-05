@@ -1,0 +1,1 @@
+A simple mvc template to create webpages with Angular js.

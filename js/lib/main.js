@@ -10,8 +10,6 @@ require.config({
 	'ui.router': scriptsUrl + 'js/vendor/angular-ui-router/release/angular-ui-router.min',
 	'app': scriptsUrl + 'js/lib/app',
     'controller.dashboard': scriptsUrl + 'js/controllers/dashboard',
-    'controller.adventure': scriptsUrl + 'js/controllers/adventure',
-    'controller.membership': scriptsUrl + 'js/controllers/membership',
     'controller.header': scriptsUrl + 'js/controllers/header',
     'directive.getObject': scriptsUrl + 'js/directives/getObject',
 	'service.api': scriptsUrl + 'js/services/api',

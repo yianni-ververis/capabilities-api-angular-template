@@ -1,9 +1,8 @@
 /*jshint unused: vars */
-var scriptsUrl = 'http://localhost/templateAngular/',
-	vendorUrl = 'https://cdnjs.cloudflare.com/ajax/libs/';
+var scriptsUrl = 'http://localhost/templateAngular/';
 
 require.config({
-  baseUrl: "https://sense-demo.qlik.com:443/resources",
+  baseUrl: "http://localhost:4848/resources",
   paths: {
   	'domReady': scriptsUrl +'js/vendor/domReady/domReady',
 	'bootstrap': scriptsUrl + 'js/vendor/bootstrap/dist/js/bootstrap.min',

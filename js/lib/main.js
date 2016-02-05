@@ -1,5 +1,5 @@
 /*jshint unused: vars */
-var scriptsUrl = 'http://localhost/templateAngular/';
+var scriptsUrl = 'http://localhost:4848/extensions/angularTemplate/';
 
 require.config({
   baseUrl: "http://localhost:4848/resources",

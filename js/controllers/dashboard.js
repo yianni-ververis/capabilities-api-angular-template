@@ -3,9 +3,10 @@
 /**
  * @ngdoc function
  * @name friluftsframjandetApp.controller:controller.dashboard
+ * @author yianni.ververis@qlik.com
  * @description
  * # controller.dashboard
- * Controller of the friluftsframjandetApp
+ * Controller of the myApp
  */
 app.obj.angularApp
 	.controller('controller.dashboard', function ($scope, $rootScope, $location, $injector, api, utility) {
@@ -20,7 +21,7 @@ app.obj.angularApp
 				["Count( {$<Priority={'Low'}, Status -={'Closed'} >} Distinct %CaseId )", false],
 			];
 			$scope.kapi = [];
-			$scope.objects = ['a5e0f12c-38f5-4da9-8f3f-0e4566b28398'];
+			me.objects = ['a5e0f12c-38f5-4da9-8f3f-0e4566b28398'];
 		}
 		
 		me.boot = function () {
@@ -29,11 +30,15 @@ app.obj.angularApp
 			me.events();
 
 			me.createKpis();
+			me.getObjects();
 
 			utility.log('Page loaded: ', $scope.page);
 		};
 
 		me.events = function () {
+			me.getObjects = function () {
+				api.getObjects(me.objects);
+			}
 			me.createKpis = function() {
 				angular.forEach(me.measures, function(value, key) {
 					api.getHyperCube([], [value[0]], function(data){
@@ -46,7 +51,9 @@ app.obj.angularApp
 				// 
 			}
 			$rootScope.goTo = function(page) {
-				$location.url('/' + page);	
+				api.destroyObjects().then(function(){
+					$location.url('/' + page);
+				});
 			}
 		}
 

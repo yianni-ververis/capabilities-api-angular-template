@@ -10,7 +10,38 @@
 app.obj.angularApp
 .service('api', function ($q, $rootScope, utility) {
 	var me = this;
-		
+			
+	me.getObjects = function (obj) {
+		var deferred = $q.defer(),
+			promises = [];
+
+		angular.forEach(obj, function(value, key) {
+			app.obj.app.getObject(value, value).then(function(model){
+				app.obj.model.push(model);
+				deferred.resolve(value);
+			});
+			promises.push(deferred.promise);
+		});
+		return $q.all(promises);
+	};
+
+	me.destroyObjects = function () {
+		var deferred = $q.defer();
+		var promises = [];
+		if (app.obj.model.length >= 1) {
+			angular.forEach(app.obj.model, function(value, key) {
+				value.close();
+				deferred.resolve();
+				promises.push(deferred.promise);
+			});
+			app.obj.model = [];
+			return $q.all(promises);
+		} else {
+			deferred.resolve();
+			return deferred.promise;
+		}
+	};
+	
 	// To get generic Hypercubes
 	me.getHyperCube = function (dimensions, measures, callback, limit) {
 		var qDimensions = [],

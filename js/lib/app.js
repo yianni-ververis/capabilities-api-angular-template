@@ -6,7 +6,8 @@ var me = {
 		obj: {
 			qlik: null,
 			app: null,
-			angularApp: null
+			angularApp: null,
+			model: [],
 		}
 	};
 

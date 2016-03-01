@@ -26,8 +26,6 @@ app.obj.angularApp
 			var el = element[0];
 			element.bind('click', function(e){
 				api.getHyperCubeQ(scope.data[0], scope.data[1]).then(function(data){
-console.log(scope);
-console.log(data);
 					var csvString = '';
 					if (scope.title.length) {
 						csvString = scope.title + "\n";

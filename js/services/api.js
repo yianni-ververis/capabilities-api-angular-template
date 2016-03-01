@@ -80,6 +80,57 @@ app.obj.angularApp
 		});
 	};
 
+	// Get Hypercube data. Using Promises
+	me.getHyperCubeQ = function (dimensions, measures) {
+		var qDimensions = [],
+			qMeasures = [];
+		if (dimensions.length) {
+			angular.forEach(dimensions, function(value, key) {
+				qDimensions.push({ 
+					qDef: { 
+						qGrouping: "N", 
+						qFieldDefs: [ value ], 
+					} 
+				});
+			});
+		}
+		if (measures.length) {
+			angular.forEach(measures, function(value, key) {
+				qMeasures.push({ 
+					qDef : { 
+						qDef : value
+					}, 
+					qSortBy: { 
+						qSortByState: 0, 
+						qSortByFrequency: 0, 
+						qSortByNumeric: 0, 
+						qSortByAscii: 0, 
+						qSortByLoadOrder: 0, 
+						qSortByExpression: 0, 
+						qExpression: { 
+							qv: "" 
+						} 
+					} 
+				});
+			});
+		}
+		var deferred = $q.defer();
+		app.obj.app.createCube({
+			qDimensions : qDimensions,
+			qMeasures : qMeasures,
+			qInitialDataFetch : [{
+				qTop : 0,
+				qLeft : 0,
+				qHeight : 500,
+				qWidth : 11
+			}]
+		}, function(reply) {
+			utility.log('getHyperCubeQ:', 'Success!');
+			deferred.resolve(reply.qHyperCube.qDataPages[0].qMatrix);
+		});
+		return deferred.promise;
+	};
+	
 	// Add Google tracking
 	me.ga = function (title) {
 		ga('send', 'event', 'button', 'click', title, 1);

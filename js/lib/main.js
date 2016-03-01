@@ -12,6 +12,7 @@ require.config({
     'controller.performance': scriptsUrl + 'js/controllers/performance',
     'controller.header': scriptsUrl + 'js/controllers/header',
     'directive.getObject': scriptsUrl + 'js/directives/getObject',
+    'directive.exportToCsv': scriptsUrl + 'js/directives/exportToCsv',
 	'service.api': scriptsUrl + 'js/services/api',
 	'service.utility': scriptsUrl + 'js/services/utilities'
   }
@@ -70,6 +71,7 @@ define([
     	'service.api',
     	'service.utility',
     	'directive.getObject',
+    	'directive.exportToCsv',
     	'bootstrap',
     	'angular-animate',
     	'ui.bootstrap',

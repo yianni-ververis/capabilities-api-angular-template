@@ -11,4 +11,7 @@ Tutorial on how to use it with 'Helpdesk Management.qvf':
 Article on Memory Management and error handling:
 <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/02/16/angularjs-and-capabilities-api-memory-management-and-qv-collapsed-listbox-delegated-open-error">Angularjs and Capabilities API - Memory management and "qv-collapsed-listbox-delegated-open" error</a>
 
+Added export to csv directive as workaround for the bug found in 2.1
+<a href="https://community.qlik.com/blog/update-post.jspa?ID=4682&draftID=847209">Capabilities API error on exporting data</a>
+
 <img src="preview.png">

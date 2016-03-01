@@ -22,6 +22,12 @@ app.obj.angularApp
 			];
 			$scope.kapi = [];
 			me.objects = ['a5e0f12c-38f5-4da9-8f3f-0e4566b28398'];
+			$scope.export = [
+				{
+					headers:['Case Owner Group', 'Avg Case Duration'], 
+					data:[['Case Owner Group'], ["Avg([Case Duration Time])"]]
+				}
+			];
 		}
 		
 		me.boot = function () {

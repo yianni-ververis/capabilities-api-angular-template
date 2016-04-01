@@ -15,13 +15,15 @@ app.obj.angularApp
 		var deferred = $q.defer(),
 			promises = [];
 
-		angular.forEach(obj, function(value, key) {
-			app.obj.app.getObject(value, value).then(function(model){
-				app.obj.model.push(model);
-				deferred.resolve(value);
+		setTimeout(function(){ 
+			angular.forEach(obj, function(value, key) {
+				app.obj.app.getObject(value, value).then(function(model){
+					app.obj.model.push(model);
+					deferred.resolve(value);
+				});
+				promises.push(deferred.promise);
 			});
-			promises.push(deferred.promise);
-		});
+		}, 500);
 		return $q.all(promises);
 	};
 

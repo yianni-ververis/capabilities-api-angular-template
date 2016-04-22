@@ -5,12 +5,14 @@ require.config({
   paths: {
   	'domReady': scriptsUrl +'js/vendor/domReady/domReady',
 	'bootstrap': scriptsUrl + 'js/vendor/bootstrap/dist/js/bootstrap.min',
+	'd3': scriptsUrl + 'js/vendor/d3/d3.min',
 	'ui.bootstrap': scriptsUrl + 'js/vendor/angular-bootstrap/ui-bootstrap-tpls.min',
 	'ui.router': scriptsUrl + 'js/vendor/angular-ui-router/release/angular-ui-router.min',
 	'app': scriptsUrl + 'js/lib/app',
     'controller.dashboard': scriptsUrl + 'js/controllers/dashboard',
     'controller.performance': scriptsUrl + 'js/controllers/performance',
     'controller.header': scriptsUrl + 'js/controllers/header',
+    'controller.d3': scriptsUrl + 'js/controllers/d3',
     'directive.getObject': scriptsUrl + 'js/directives/getObject',
     'directive.exportToCsv': scriptsUrl + 'js/directives/exportToCsv',
 	'service.api': scriptsUrl + 'js/services/api',
@@ -60,14 +62,29 @@ define([
 				},
 			}
 	    })
+	    .state('d3', {
+			url: "/d3",
+	    	views: {
+				'header': { 
+					templateUrl: "views/d3.html",
+					controller: 'controller.d3' 
+				},
+				'main': { 
+					templateUrl: "views/d3.html",
+					controller: 'controller.d3' 
+				},
+			}
+	    })
 	});
     require([
     	'domReady!', 
     	'js/qlik',
     	'angular',
+    	'd3', 
     	'controller.dashboard',
     	'controller.performance',
     	'controller.header',
+    	'controller.d3',
     	'service.api',
     	'service.utility',
     	'directive.getObject',

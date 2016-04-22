@@ -28,6 +28,7 @@ app.obj.angularApp
 				api.getObjects(me.objects);
 			}
 			$rootScope.clearAll = function () {
+console.log(1)
 				app.obj.app.clearAll();
 				// Custom init for clearAll in the main controller
 				$rootScope.clearAllController();

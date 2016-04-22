@@ -54,7 +54,8 @@ app.obj.angularApp
 					qDef: { 
 						qGrouping: "N", 
 						qFieldDefs: [ value ], 
-					} 
+					},
+					qNullSuppression: true, 
 				});
 			});
 		}

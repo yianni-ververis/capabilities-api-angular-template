@@ -56,6 +56,9 @@ app.obj.angularApp
 			$rootScope.clearAllController = function () {
 				// 
 			}
+			$rootScope.clearAll = function () {
+				app.obj.app.clearAll();
+			}
 			$rootScope.goTo = function(page) {
 				api.destroyObjects().then(function(){
 					$location.url('/' + page);

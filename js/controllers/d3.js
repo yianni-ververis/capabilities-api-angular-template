@@ -24,7 +24,7 @@ app.obj.angularApp
 			me.events();
 
 			me.getData();
-			app.obj.app.getObject('CurrentSelections', 'CurrentSelections');
+			// app.obj.app.getObject('CurrentSelections', 'CurrentSelections');
 
 			utility.log('Page loaded: ', $scope.page);
 		};
@@ -185,7 +185,7 @@ app.obj.angularApp
 					.attr("class", function(d) { 
 						return 'barTextOut';
 					});
-					}
+			}
 
 			// Clear current scope's function
 			$rootScope.clearAll = function () {

@@ -21,7 +21,7 @@ app.obj.angularApp
 				["Count( {$<Priority={'Low'}, Status -={'Closed'} >} Distinct %CaseId )", false],
 			];
 			$scope.kapi = [];
-			me.objects = ['a5e0f12c-38f5-4da9-8f3f-0e4566b28398'];
+			me.objects = ['ycppXj','a5e0f12c-38f5-4da9-8f3f-0e4566b28398'];
 			$scope.export = [
 				{
 					headers:['Case Owner Group', 'Avg Case Duration'], 
@@ -51,10 +51,6 @@ app.obj.angularApp
 						$scope.kapi[key] = (value[1])?utility.string2thousands(data[0][0].qText):data[0][0].qText;
 					});
 				});
-			}
-			// Clear current scope's function
-			$rootScope.clearAllController = function () {
-				// 
 			}
 			$rootScope.clearAll = function () {
 				app.obj.app.clearAll();

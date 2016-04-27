@@ -31,10 +31,6 @@ app.obj.angularApp
 			me.getObjects = function () {
 				api.getObjects(me.objects);
 			}
-			// Clear current scope's function
-			$rootScope.clearAllController = function () {
-				// 
-			}
 			$rootScope.clearAll = function () {
 				app.obj.app.clearAll();
 			}

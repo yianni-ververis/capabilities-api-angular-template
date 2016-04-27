@@ -7,7 +7,6 @@ require.config({
 	'bootstrap': scriptsUrl + 'js/vendor/bootstrap/dist/js/bootstrap.min',
 	'd3': scriptsUrl + 'js/vendor/d3/d3.min',
 	'ui.bootstrap': scriptsUrl + 'js/vendor/angular-bootstrap/ui-bootstrap-tpls.min',
-	'ui.router': scriptsUrl + 'js/vendor/angular-ui-router/release/angular-ui-router.min',
 	'app': scriptsUrl + 'js/lib/app',
     'controller.dashboard': scriptsUrl + 'js/controllers/dashboard',
     'controller.performance': scriptsUrl + 'js/controllers/performance',
@@ -30,52 +29,25 @@ define([
     define( "client.services/grid-service", {} );
 	app.obj.angularApp = angular.module('myApp', [
 		'ngAnimate',
-		'ui.router',
+		'ngRoute',
 		'ui.bootstrap'
 	]);
-	app.obj.angularApp.config(function($stateProvider, $urlRouterProvider) {
-	$urlRouterProvider.otherwise("/dashboard");
-		$stateProvider
-	    .state('dashboard', {
-			url: "/dashboard",
-	    	views: {
-				'header': { 
-					templateUrl: "views/header.html",
-					controller: 'controller.header' 
-				},
-				'main': { 
-					templateUrl: "views/dashboard.html",
-					controller: 'controller.dashboard' 
-				},
-			}
-	    })
-	    .state('performance', {
-			url: "/performance",
-	    	views: {
-				'header': { 
-					templateUrl: "views/header.html",
-					controller: 'controller.header' 
-				},
-				'main': { 
-					templateUrl: "views/performance.html",
-					controller: 'controller.performance' 
-				},
-			}
-	    })
-	    .state('d3', {
-			url: "/d3",
-	    	views: {
-				'header': { 
-					templateUrl: "views/d3.html",
-					controller: 'controller.d3' 
-				},
-				'main': { 
-					templateUrl: "views/d3.html",
-					controller: 'controller.d3' 
-				},
-			}
-	    })
-	});
+	app.obj.angularApp.config(function($routeProvider) {
+		$routeProvider
+			.when('/', { 
+				templateUrl: "views/dashboard.html",
+				controller: 'controller.dashboard' 
+			} )
+			.when('/performance', { 
+				templateUrl: "views/performance.html",
+				controller: 'controller.performance' 
+			} )
+			.when('/d3', { 
+				templateUrl: "views/d3.html",
+				controller: 'controller.d3' 
+			} )
+			.otherwise({redirectTo: '/'})
+	})
     require([
     	'domReady!', 
     	'js/qlik',
@@ -91,8 +63,7 @@ define([
     	'directive.exportToCsv',
     	'bootstrap',
     	'angular-animate',
-    	'ui.bootstrap',
-    	'ui.router'
+    	'ui.bootstrap'
     ], function (document, qlik) {
     	app.obj.qlik = qlik;
 		qlik.setOnError( function ( error ) {

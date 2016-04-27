@@ -32,21 +32,22 @@ define([
 		'ngRoute',
 		'ui.bootstrap'
 	]);
-	app.obj.angularApp.config(function($routeProvider) {
+	app.obj.angularApp.config(function($routeProvider,$locationProvider) {
 		$routeProvider
 			.when('/', { 
-				templateUrl: "views/dashboard.html",
+				templateUrl: scriptsUrl+"views/dashboard.html",
 				controller: 'controller.dashboard' 
 			} )
 			.when('/performance', { 
-				templateUrl: "views/performance.html",
+				templateUrl: scriptsUrl+"views/performance.html",
 				controller: 'controller.performance' 
 			} )
 			.when('/d3', { 
-				templateUrl: "views/d3.html",
+				templateUrl: scriptsUrl+"views/d3.html",
 				controller: 'controller.d3' 
 			} )
 			.otherwise({redirectTo: '/'})
+		$locationProvider.html5Mode({ enabled: true, requireBase: true });
 	})
     require([
     	'domReady!', 

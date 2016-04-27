@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name friluftsframjandetApp.controller:controller.dashboard
+ * @name friluftsframjandetApp.controller:controller.d3
  * @author yianni.ververis@qlik.com
  * @description
- * # controller.dashboard
+ * # controller.d3
  * Controller of the myApp
  */
 app.obj.angularApp

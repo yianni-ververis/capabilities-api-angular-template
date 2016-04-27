@@ -29,7 +29,9 @@ app.obj.angularApp
 
 		me.events = function () {
 			me.getObjects = function () {
-				api.getObjects(me.objects);
+				api.destroyObjects().then(function(){
+					api.getObjects(me.objects);
+				})
 			}
 			$rootScope.clearAll = function () {
 				app.obj.app.clearAll();

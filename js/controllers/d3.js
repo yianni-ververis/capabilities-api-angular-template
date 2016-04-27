@@ -15,7 +15,8 @@ app.obj.angularApp
 		me.init = function () {
 			$rootScope.page = 3;
 			$rootScope.title = 'D3 Example';
-
+			me.dimension = 'Case Owner Group';
+			me.measure = 'Avg([Case Duration Time])';
 		}
 		
 		me.boot = function () {
@@ -31,9 +32,9 @@ app.obj.angularApp
 
 		me.events = function () {
 			me.getData = function() {
-					api.getHyperCube(['Case Owner Group'], ['Avg([Case Duration Time])'], function(data){
-						me.createBarChart(data);
-					});
+				api.getHyperCube([me.dimension], [me.measure], function(data){
+					me.createBarChart(data);
+				});
 			}
 			me.createBarChart = function (data) {
 				var vars = {
@@ -164,8 +165,7 @@ app.obj.angularApp
 						d3.select(this).style("fill", vars.bar.color);
 					})
 					.on('click', function(d, i) {
-						console.log(d);
-						app.obj.app.field('Case Owner Group').select([d.qElemNumber], false, false)
+						app.obj.app.field(me.dimension).select([d.qElemNumber], false, false)
 					});
 
 				// Draw text 

@@ -13,10 +13,13 @@ app.obj.angularApp
 
 	// Convert 10000 into 10,000
 	me.string2thousands = function (string) {
+		if (_.isNumber(string)){
+			string = string.toString();
+		}
 		if (string.length >= 6 ) {
-			return string.replace(/(\d+)(\d{3})(\d{3})/, '$1' + ' ' + '$2' + ' ' + '$3');
+			return string.replace(/(\d+)(\d{3})(\d{3})/, '$1' + ',' + '$2' + ',' + '$3');
 		} else {
-			return string.replace(/(\d+)(\d{3})/, '$1' + ' ' + '$2');
+			return string.replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
 		}
 	}
 

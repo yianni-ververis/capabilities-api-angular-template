@@ -47,7 +47,7 @@ define([
 				controller: 'controller.d3' 
 			} )
 			.otherwise({redirectTo: '/'})
-		$locationProvider.html5Mode({ enabled: true, requireBase: true });
+		// $locationProvider.html5Mode({ enabled: true, requireBase: true });
 	})
     require([
     	'domReady!', 

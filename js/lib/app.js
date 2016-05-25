@@ -3,13 +3,15 @@
  *
  */
 var me = {
-		obj: {
-			qlik: null,
-			app: null,
-			angularApp: null,
-			model: [],
-		}
-	};
+	v: '1.0.4',
+	obj: {
+		qlik: null,
+		app: null,
+		angularApp: null,
+		model: [],
+		getObjectModel: []
+	}
+};
 
 me.init = function () {
 	me.config = {
@@ -40,11 +42,10 @@ me.events = function () {
 	$( document ).ready(function() {
 		$(".container").height($("body").height() - 50);
 	});
-
 	$(window).resize(function() {
 	    $(".container").height($("body").height());
 	});
-
+	console.log('%c App ' + me.v + ': ', 'color: red', 'Loaded!');
 };
 
 app = me;

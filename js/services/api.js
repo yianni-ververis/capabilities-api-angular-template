@@ -37,11 +37,20 @@ app.obj.angularApp
 				promises.push(deferred.promise);
 			});
 			app.obj.model = [];
-			return $q.all(promises);
-		} else {
-			deferred.resolve();
-			return deferred.promise;
 		}
+		if (app.obj.getObjectModel.length >= 1) {
+			angular.forEach(app.obj.getObjectModel, function(value, key) {
+				value.close();
+				deferred.resolve();
+				promises.push(deferred.promise);
+			});
+			app.obj.getObjectModel = [];
+		} 
+		if (app.obj.model.length < 1 && app.obj.getObjectModel.length < 1) {
+			deferred.resolve();
+			promises.push(deferred.promise);
+		}
+		return $q.all(promises);
 	};
 	
 	// To get generic Hypercubes

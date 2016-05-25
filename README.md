@@ -20,4 +20,8 @@ http://localhost:4848/extensions/angularTemplate/index.html
 ###### D3 support for custom Charts
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/04/18/angularjs-capabilities-api-and-d3">Angularjs, Capabilities API and D3</a>
 
+
+###### getObject using a directive
+- <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/05/27/angularjs-capabilites-api-getobject-the-angular-way-using-directive3">Angularjs, Capabilites API - getObject the Angular way using directive</a>
+
 <img src="preview.png">

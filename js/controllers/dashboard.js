@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+/** 
  * @ngdoc function
  * @name friluftsframjandetApp.controller:controller.dashboard
  * @author yianni.ververis@qlik.com

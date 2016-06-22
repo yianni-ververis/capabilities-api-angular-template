@@ -30,6 +30,14 @@ A simple template to create a website with Angular js. It utilizes the Capabilit
   * height: the object desired height
   * interaction: false if you want to disable interactions in your object otherwise just omit, defaults to true
 
+###### Adding Drop Down filter
+- Add in your html the code `<drop-down data-dimension="'Cases Open/Closed'" data-title="'Cases Open/Closed'" data-id="'cases'" data-showselected="true"></drop-down>`
+  * data-dimension: is the dimension to populate the drop down list from
+  * data-title: is for the text that will be displayed in the button
+  * data-id: a unique id/name that the app will use to change the contents like text, colors etc
+  * data-showselected="true" : if you want the button text to change to the seleted text
+
+
 ## Tutorials
 
 ###### Tutorial on how to use it with 'Helpdesk Management.qvf':

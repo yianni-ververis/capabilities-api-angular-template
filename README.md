@@ -8,7 +8,7 @@ A simple template to create a website with Angular js. It utilizes the Capabilit
 
 ## Usage
 
-#### Changing app and server
+##### Changing app and server
 - js/lib/app.js, change the configuration to much your server host url and the app id. Qlik Sense server is running on secure protocol so make sure to change the port to 443
 
 ##### Adding pages

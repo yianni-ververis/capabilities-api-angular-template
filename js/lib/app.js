@@ -3,7 +3,7 @@
  *
  */
 var me = {
-	v: '1.0.4',
+	v: '1.0.5',
 	obj: {
 		qlik: null,
 		app: null,
@@ -15,36 +15,17 @@ var me = {
 
 me.init = function () {
 	me.config = {
-		host: null,
+		host: 'localhost',
 		prefix: "/",
-		port: 4848,
-		isSecure: false
+		port: 4848, // 443 for Sense Server
+		id: 'Helpdesk Management.qvf'
 	};
-	me.vars = {
-		server: {
-			local: window.location.hostname
-		},
-		id: 'Helpdesk Management.qvf',
-	};
-
-	me.config.host = me.vars.server.local;
+	me.vars = {};
 }
 
 me.boot = function () {
 	me.init();
-
-	me.obj.app = me.obj.qlik.openApp(me.vars.id, me.config);
-
-	me.events();
-};
-
-me.events = function () {
-	$( document ).ready(function() {
-		$(".container").height($("body").height() - 50);
-	});
-	$(window).resize(function() {
-	    $(".container").height($("body").height());
-	});
+	me.obj.app = me.obj.qlik.openApp(me.config.id, me.config);
 	console.log('%c App ' + me.v + ': ', 'color: red', 'Loaded!');
 };
 

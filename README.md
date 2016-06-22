@@ -1,9 +1,12 @@
-A simple mvc template to create webpages with Angular js.
+# Angular Template with Qlik Sense Capabilities API
+A simple mvc template to create webpages with Angular js. It utilizes the Capabilities API for seamless interaction and multipage mashups
 
-Just bower install before any use to get all the libraries.
+## Installation
+- Place project under your extensions folder C:\Users\<username>\Documents\Qlik\Sense\Extensions
+- From the command line run `bower install`  to get all the libraries.
+- Access it from [http://localhost:4848/extensions/angularTemplate/index.html](http://localhost:4848/extensions/angularTemplate/index.html)
 
-Access it via:
-http://localhost:4848/extensions/angularTemplate/index.html
+## Tutorials
 
 ###### Tutorial on how to use it with 'Helpdesk Management.qvf':
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/02/05/creating-a-website-with-angular-and-the-capabilities-api">Creating a website with Angular and the Capabilities API</a>
@@ -20,8 +23,9 @@ http://localhost:4848/extensions/angularTemplate/index.html
 ###### D3 support for custom Charts
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/04/18/angularjs-capabilities-api-and-d3">Angularjs, Capabilities API and D3</a>
 
-
 ###### getObject using a directive
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/05/27/angularjs-capabilites-api-getobject-the-angular-way-using-directive3">Angularjs, Capabilites API - getObject the Angular way using directive</a>
+
+###### DropDown Directive - Coming Up
 
 <img src="preview.png">

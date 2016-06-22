@@ -52,6 +52,6 @@ A simple template to create a website with Angular js. It utilizes the Capabilit
 
 ###### Creating Drop Down Menus
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/06/24/angularjs-capabilities-api-dropdown-directive">Angularjs & Capabilities API - DropDown Directive</a>
-- 
+
 
 <img src="preview.png">

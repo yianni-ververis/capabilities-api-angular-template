@@ -8,10 +8,10 @@ A simple template to create a website with Angular js. It utilizes the Capabilit
 
 ## Usage
 
-###### Changing app and server
+#### Changing app and server
 - js/lib/app.js, change the configuration to much your server host url and the app id. Qlik Sense server is running on secure protocol so make sure to change the port to 443
 
-###### Adding pages
+##### Adding pages
 1. In js/controllers, Copy, paste and rename your new controller
 2. In views, copy, paste and rename your new view for your controller
 3. Load your new pages and define the url routes in js/lib/main.js, 
@@ -24,13 +24,13 @@ A simple template to create a website with Angular js. It utilizes the Capabilit
   * Finally, load them by adding the controller in L58 `'controller.controller.yourPage'`
   * You can access your new page by going to http://localhost:4848/extensions/angularTemplate/index.html#/yourPage
 
-###### Adding Qlik Sense Objects
+##### Adding Qlik Sense Objects
 - Add in your html the code `<get-object qvid="'objectId'" id="'objectId'" height="400" interaction="false"></get-object>`. 
   * qvid: the object id as found at the dev-hub `http://localhost:4848/dev-hub/single-configurator`
   * height: the object desired height
   * interaction: false if you want to disable interactions in your object otherwise just omit, defaults to true
 
-###### Adding Drop Down filter
+##### Adding Drop Down filter
 - Add in your html the code `<drop-down data-dimension="'Cases Open/Closed'" data-title="'Cases Open/Closed'" data-id="'cases'" data-showselected="true"></drop-down>`
   * data-dimension: is the dimension to populate the drop down list from
   * data-title: is for the text that will be displayed in the button

@@ -9,117 +9,117 @@
 
 html,
 body {
-    overflow-y: auto;
-    touch-action: auto;
-    font-family: @font-sans;
-    font-style: normal;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
+	overflow-y: auto;
+	touch-action: auto;
+	font-family: @font-sans;
+	font-style: normal;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
 }
 h1 {
-    font-family: @font-serif;
-    font-weight: bold;
-    font-size: 28px;
-    margin: 0 !important;
-    padding: 0 !important;
+	font-family: @font-serif;
+	font-weight: bold;
+	font-size: 28px;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 h2, h3, h4, h5 {
-    font-family: @font-sans;
-    color: #666666;
-    font-weight: bold;
-    display: inline-block;
-    margin: 0 !important;
-    padding: 0 !important;
+	font-family: @font-sans;
+	color: #666666;
+	font-weight: bold;
+	display: inline-block;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 h2 {
-    font-size: 18px;
+	font-size: 18px;
 }
 h3 {
-    font-size: 15px;
+	font-size: 15px;
 }
 a {
-    cursor: pointer;
+	cursor: pointer;
 }
 div.qvobject, div.qvplaceholder {
-    padding: 0 0 0 0;
-    height: 400px;
+	padding: 0 0 0 0;
+	height: 400px;
 }
 div.qvobject.one {
-    height: 100px;
+	height: 100px;
 }
 div.qvobject.fifty {
-    height: 50px;
+	height: 50px;
 }
 .devider {
-    width: 30%;
-    height: 1px;
+	width: 30%;
+	height: 1px;
 }
 .noMarginPadding {
-    margin: 0 !important;
-    padding: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 .noMarginPaddingTopBottom {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 .pageTitle {
-    padding-bottom: 5px !important;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-bottom: 1px dashed darkgray;
+	padding-bottom: 5px !important;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	border-bottom: 1px dashed darkgray;
 }
 .subtitleHolder {
-    padding-top: 10px;
-    padding-bottom: 5px !important;
+	padding-top: 10px;
+	padding-bottom: 5px !important;
 }
 .subtitleHolder a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 .subtitleHolder a.active,
 .subtitleHolder a.active:hover,
 .activeTitle {
-    color: black;
-    font-style: normal;
-    cursor: default;
-    text-decoration: none;
+	color: black;
+	font-style: normal;
+	cursor: default;
+	text-decoration: none;
 }
 .subtitle {
-    // font-size: 18px;
-    // font-weight: bold;
-    margin-right: 20px;
+	// font-size: 18px;
+	// font-weight: bold;
+	margin-right: 20px;
 }
 .subtitle.active {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
+	color: #404040;
+	cursor: default;
+	text-decoration: none;
 }
 .subtitle.active:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 /*************
  * HEADER 
 **************/
 .header a {
-    color: gray;
-    letter-spacing: 1px;
+	color: gray;
+	letter-spacing: 1px;
 }
 .header .active {
-    color: @color-blue-dark;
-    font-weight: bold;
-    text-decoration: none;
+	color: @color-blue-dark;
+	font-weight: bold;
+	text-decoration: none;
 }
 .navbar-nav.blue li a {
-    font-size: 1.3em;
-    font-weight: bold;
-    color: @color-blue;
-    background: white;
-    vertical-align: middle;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 23px 40px;
+	font-size: 1.3em;
+	font-weight: bold;
+	color: @color-blue;
+	background: white;
+	vertical-align: middle;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 23px 40px;
 }
 
 /*************
@@ -128,41 +128,58 @@ div.qvobject.fifty {
 .qlik,
 .qlik a,
 .qlik a:hover {
-    color: #65a604 !important;
+	color: #65a604 !important;
 }
 /*************
  * BOOTSTRAP 
 **************/
 .container {
-    // max-width: 1220px; // Full Page
-    max-width: 915px; // Page with navigation on the side
-    width: 100%;
-}
-.row {
-    padding-bottom: 20px;
-}
-.btn {
-    font-weight: bold;
-    border-radius: 0;
-    text-transform: uppercase;
+	// max-width: 1220px; // Full Page
+	max-width: 915px; // Page with navigation on the side
+	width: 100%;
+	.row {
+		padding-bottom: 20px;
+		.btn {
+			font-weight: bold;
+			border-radius: 0;
+			text-transform: uppercase;
+			&.btn-success {
+				background-color: @color-green;
+				border-color: @color-green;
+			}
+			&.btn-danger {
+				background-color: @color-red;
+				border-color: @color-red;
+			}
+			&.btn-danger:hover,
+			&.btn-success:hover {
+				color: @color-green;
+				background-color: white;
+				border-color: lightgray;
+			}
+		}
+		.dropdown-menu {
+			.active,
+			.active a,
+			.active a:hover,
+			.active a:focus,
+			li:hover,
+			li a:hover {
+				color: white;
+				background-color: @color-green;
+			}
+			/*.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus*/
+		}
+		.scrollable-menu {
+			height: auto;
+			overflow-x: hidden;
+			z-index: 9999999;
+			max-height: 200px;
+		}
+	}
 }
 
-.btn-success {
-    background-color: @color-green;
-    border-color: @color-green;
-}
 
-.btn-danger {
-    background-color: @color-red;
-    border-color: @color-red;
-}
-
-.btn-danger:hover,
-.btn-success:hover {
-    color: #77b62a;
-    background-color: white;
-    border-color: lightgray;
-}
 /*************
  * ANGULAR 
 **************/

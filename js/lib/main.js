@@ -13,6 +13,7 @@ require.config({
     'controller.header': scriptsUrl + 'js/controllers/header',
     'controller.d3': scriptsUrl + 'js/controllers/d3',
     'directive.getObject': scriptsUrl + 'js/directives/getObject',
+    'directive.dropDown': scriptsUrl + 'js/directives/dropDown',
     'directive.exportToCsv': scriptsUrl + 'js/directives/exportToCsv',
 	'service.api': scriptsUrl + 'js/services/api',
 	'service.utility': scriptsUrl + 'js/services/utilities'
@@ -60,7 +61,8 @@ define([
     	'controller.d3',
     	'service.api',
     	'service.utility',
-    	'directive.getObject',
+        'directive.getObject',
+    	'directive.dropDown',
     	'directive.exportToCsv',
     	'bootstrap',
     	'angular-animate',

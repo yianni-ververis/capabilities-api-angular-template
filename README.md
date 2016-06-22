@@ -1,10 +1,34 @@
-# Angular Template with Qlik Sense Capabilities API
-A simple mvc template to create webpages with Angular js. It utilizes the Capabilities API for seamless interaction and multipage mashups
+# Angular Template for Qlik Sense Capabilities API
+A simple template to create a website with Angular js. It utilizes the Capabilities API for seamless interaction and multipage mashups
 
 ## Installation
 - Place project under your extensions folder C:\Users\<username>\Documents\Qlik\Sense\Extensions
 - From the command line run `bower install`  to get all the libraries.
 - Access it from [http://localhost:4848/extensions/angularTemplate/index.html](http://localhost:4848/extensions/angularTemplate/index.html)
+
+## Usage
+
+###### Changing app and server
+- js/lib/app.js, change the configuration to much your server host url and the app id. Qlik Sense server is running on secure protocol so make sure to change the port to 443
+
+###### Adding pages
+1. In js/controllers, Copy, paste and rename your new controller
+2. In views, copy, paste and rename your new view for your controller
+3. Load your new pages and define the url routes in js/lib/main.js, 
+  * L12, add the controller `'controller.yourPage': scriptsUrl + 'js/controllers/yourPage',`
+  * L46, add the url routes 
+	```		.when('/d3', { 
+				templateUrl: scriptsUrl+"views/yourPage.html",
+				controller: 'controller.yourPage' 
+	```		} )
+  * Finally, load them by adding the controller in L58 `'controller.controller.yourPage'`
+  * You can access your new page by going to http://localhost:4848/extensions/angularTemplate/index.html#/yourPage
+
+###### Adding Qlik Sense Objects
+- Add in your html the code `<get-object qvid="'objectId'" id="'objectId'" height="400" interaction="false"></get-object>`. 
+  * qvid: the object id as found at the dev-hub `http://localhost:4848/dev-hub/single-configurator`
+  * height: the object desired height
+  * interaction: false if you want to disable interactions in your object otherwise just omit, defaults to true
 
 ## Tutorials
 
@@ -26,6 +50,8 @@ A simple mvc template to create webpages with Angular js. It utilizes the Capabi
 ###### getObject using a directive
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/05/27/angularjs-capabilites-api-getobject-the-angular-way-using-directive3">Angularjs, Capabilites API - getObject the Angular way using directive</a>
 
-###### DropDown Directive - Coming Up
+###### Creating Drop Down Menus
+- <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/06/24/angularjs-capabilities-api-dropdown-directive">Angularjs & Capabilities API - DropDown Directive</a>
+- 
 
 <img src="preview.png">

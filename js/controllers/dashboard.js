@@ -38,6 +38,8 @@ app.obj.angularApp
 			me.createKpis();
 			me.getObjects();
 
+			// For debugging selections uncommment the line below
+			app.obj.app.getObject('CurrentSelections', 'CurrentSelections');
 			utility.log('Page loaded: ', $scope.page);
 		};
 

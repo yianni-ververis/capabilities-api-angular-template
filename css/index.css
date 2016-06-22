@@ -128,27 +128,45 @@ div.qvobject.fifty {
   max-width: 915px;
   width: 100%;
 }
-.row {
+.container .row {
   padding-bottom: 20px;
 }
-.btn {
+.container .row .btn {
   font-weight: bold;
   border-radius: 0;
   text-transform: uppercase;
 }
-.btn-success {
+.container .row .btn.btn-success {
   background-color: #77b62a;
   border-color: #77b62a;
 }
-.btn-danger {
+.container .row .btn.btn-danger {
   background-color: #da0063;
   border-color: #da0063;
 }
-.btn-danger:hover,
-.btn-success:hover {
+.container .row .btn.btn-danger:hover,
+.container .row .btn.btn-success:hover {
   color: #77b62a;
   background-color: white;
   border-color: lightgray;
+}
+.container .row .dropdown-menu {
+  /*.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus*/
+}
+.container .row .dropdown-menu .active,
+.container .row .dropdown-menu .active a,
+.container .row .dropdown-menu .active a:hover,
+.container .row .dropdown-menu .active a:focus,
+.container .row .dropdown-menu li:hover,
+.container .row .dropdown-menu li a:hover {
+  color: white;
+  background-color: #77b62a;
+}
+.container .row .scrollable-menu {
+  height: auto;
+  overflow-x: hidden;
+  z-index: 9999999;
+  max-height: 200px;
 }
 /*************
  * ANGULAR 

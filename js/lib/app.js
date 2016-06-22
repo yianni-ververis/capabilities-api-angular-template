@@ -3,7 +3,7 @@
  *
  */
 var me = {
-	v: '1.0.5',
+	v: '1.0.6',
 	obj: {
 		qlik: null,
 		app: null,

@@ -32,7 +32,6 @@ app.obj.angularApp
 				var html = '';
 				scope.$watch('dimension',function(newValue,oldValue) {
 					api.getHyperCubeQ([newValue], []).then(function(data){
-						console.log(scope)
 						// Create the template
 						html = '<div class="btn-group" id="' + scope.id + '">\n\
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">\n\

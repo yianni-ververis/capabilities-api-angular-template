@@ -45,10 +45,6 @@ div.qvobject.one {
 div.qvobject.fifty {
   height: 50px;
 }
-.devider {
-  width: 30%;
-  height: 1px;
-}
 .noMarginPadding {
   margin: 0 !important;
   padding: 0 !important;
@@ -59,60 +55,9 @@ div.qvobject.fifty {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
-.pageTitle {
-  padding-bottom: 5px !important;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  border-bottom: 1px dashed darkgray;
-}
-.subtitleHolder {
-  padding-top: 10px;
-  padding-bottom: 5px !important;
-}
-.subtitleHolder a {
-  text-decoration: underline;
-}
-.subtitleHolder a.active,
-.subtitleHolder a.active:hover,
-.activeTitle {
-  color: black;
-  font-style: normal;
-  cursor: default;
-  text-decoration: none;
-}
-.subtitle {
-  margin-right: 20px;
-}
-.subtitle.active {
-  color: #404040;
-  cursor: default;
-  text-decoration: none;
-}
-.subtitle.active:hover {
-  text-decoration: none;
-}
 /*************
  * HEADER 
 **************/
-.header a {
-  color: gray;
-  letter-spacing: 1px;
-}
-.header .active {
-  color: #123b71;
-  font-weight: bold;
-  text-decoration: none;
-}
-.navbar-nav.blue li a {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #407ec9;
-  background: white;
-  vertical-align: middle;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 23px 40px;
-}
 /*************
  * QLIK 
 **************/
@@ -125,7 +70,7 @@ div.qvobject.fifty {
  * BOOTSTRAP 
 **************/
 .container {
-  max-width: 915px;
+  max-width: 950px;
   width: 100%;
 }
 .container .row {

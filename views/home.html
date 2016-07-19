@@ -1,0 +1,26 @@
+<!-- controller.main -->
+
+<!-- Header -->
+<div class="row header" ng-cloak>
+	<div class="col-md-12">
+		<drop-down data-dimension="'Cases Open/Closed'" data-title="'Cases Open/Closed'" data-id="'cases'" data-showselected="true"></drop-down>
+	</div>
+</div>
+
+<!-- KPIs -->
+<div class="row">
+	<div class="col-md-4">
+		<div class="fkpi">
+			<h3>High Priority Cases</h3>
+			<div class="text-center"><img src="img/bg-gray.png" class="devider"></div>
+			<h2>{{ kapi[0] }}</h2>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<get-object qvid="'ycppXj'" id="'ycppXj'" height="400" interaction="true"></get-object>
+	</div>
+</div>
+

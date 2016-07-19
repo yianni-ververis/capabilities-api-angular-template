@@ -25,43 +25,12 @@
 
 	<div class="container">
 
-		<div class="header">
-			<div class="navbar navbar-default" role="navigation">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-					  <span class="sr-only">Toggle navigation</span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
-					</button>
-				</div>
-
-				<div class="collapse navbar-collapse" id="js-navbar-collapse">
-					<ul class="nav navbar-nav blue">
-					  <li ng-class="(page==1) ? 'disabled' : ''"><a ng-click="goTo('dashboard')">Dashboard</a></li>
-					  <li ng-class="(page==2) ? 'disabled' : ''"><a ng-click="goTo('performance')">Performance</a></li>						  
-					  <li ng-class="(page==3) ? 'disabled' : ''"><a ng-click="goTo('d3')">D3 Example</a></li>						  
-					</ul>
-				</div>
-			<!-- </div> -->
-			</div>
-		</div>
-
-		<div class="row pageTitle" ng-cloak>
-			<div class="col-md-6">
-				<h1>{{ title }}</h1>
-			</div>
-			<div class="col-md-6 text-right">
-				<a class="btn btn-success" ng-click="clearAll()">Clear Selections</a>
-			</div>
-		</div>
-
 		<div ng-view id="maincontent"></div>
 
 		<div class="footer">
 			<div class="row">
 				<div class="col-md-12 text-right">
-					<a href="http://www.qlik.com/" target="_blank" onclick="app.ga('qlik.com')"><img src="img/logo---powered-by-Qlik.png"></a>
+					<a href="http://www.qlik.com/" target="_blank"><img src="img/logo---powered-by-Qlik.png"></a>
 				</div>
 			</div>
 		</div>

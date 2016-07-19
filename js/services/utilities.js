@@ -8,7 +8,7 @@
  * Controller of the friluftsframjandetApp
  */
 app.obj.angularApp
-.service('utility', function ($q) {
+.service('utility', function ($q, $window, $location) {
 	var me = this;
 
 	// Convert 10000 into 10,000
@@ -26,6 +26,7 @@ app.obj.angularApp
 	// Custom Logger
 	me.log = function (type, message) {
 		console.log('%c ' + type + ': ', 'color: red', message);
+		$window.ga('send', 'pageview', $location.path());
 	};
 
 });

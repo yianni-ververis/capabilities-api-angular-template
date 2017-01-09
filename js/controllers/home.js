@@ -26,7 +26,7 @@ app.obj.angularApp
 			me.events();
 
 			me.createKpis();
-			me.getObjects();
+			// me.getObjects();
 
 			// For debugging selections uncommment the line below
 			app.obj.app.getObject('CurrentSelections', 'CurrentSelections');
@@ -34,11 +34,11 @@ app.obj.angularApp
 		};
 
 		me.events = function () {
-			me.getObjects = function () {
-				api.destroyObjects().then(function(){
-					api.getObjects(me.objects);
-				})
-			}
+			// me.getObjects = function () {
+			// 	api.destroyObjects().then(function(){
+			// 		api.getObjects(me.objects);
+			// 	})
+			// }
 			me.createKpis = function() {
 				angular.forEach(me.measures, function(value, key) {
 					api.getHyperCube([], [value[0]], function(data){

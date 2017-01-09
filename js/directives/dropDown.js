@@ -5,7 +5,7 @@
  * @name myApp.directive: dropDown
  * @description
  * # dropDown
- * Controller of the myApp
+ * <drop-down data-dimension="'Cases Open/Closed'" data-title="'CASES OPEN/CLOSED'" data-id="'cases'" data-showselected="true" font-size="25"></drop-down>
  */
 app.obj.angularApp
     .directive('dropDown', function($parse, $sce, $compile, $timeout, api) {
@@ -24,17 +24,20 @@ app.obj.angularApp
                 id: '=',
                 title: '=',
                 width: '=',
+                fontSize: '@',
             };
 
             me.def.link = function(scope, element, attrs) {
+                console.log(scope)
                 scope.items = {};
                 scope.currentItem = {
                     qText: scope.title
                 };
                 scope.$watch('dimension', function(newValue, oldValue) {
-                        api.getHyperCubeQ([newValue], []).then(function(data) {
-                            scope.items = data;
-                        })
+                    me.def.cssTemplate(scope);
+                    api.getHyperCubeQ([newValue], []).then(function(data) {
+                        scope.items = data;
+                    })
                 });
                 scope.dropDownChangeTitle = function (obj) {
                     app.obj.app.field(scope.dimension).select([obj.qElemNumber], false, false)
@@ -52,6 +55,21 @@ app.obj.angularApp
                         <li ng-repeat="item in items"><a ng-click="dropDownChangeTitle(item[0])" ng-class="(currentItem.qElemNumber==item[0].qElemNumber)?\'active\':\'\'">{{item[0].qText}}</a></li>\n\
                     </ul>\n\
                 </div>';
+            
+            
+            me.def.cssTemplate = function (obj) {
+                var css = '\n\
+                    <style type="text/css">\n\
+                        #' + obj.id + ' .btn {\n\
+                            font-size: ' + obj.fontSize + 'px;\n\
+                        }\n\
+                        #' + obj.id + ' .dropdown-menu>li>a {\n\
+                            font-size: ' + obj.fontSize + 'px;\n\
+                        }\n\
+                    </style>\n\
+                ';
+                angular.element('head').append(css);
+            }
 
              return me.def;
         }

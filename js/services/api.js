@@ -143,6 +143,29 @@ app.obj.angularApp
 		return deferred.promise;
 	};
 	
+	me.getTable = function(dimensions, measures, options) {
+		return app.obj.app.createTable(dimensions, measures, options);
+	}
+
+	// To get list of data
+	me.createList = function (field, callback, limit) {
+		console.log(field);
+		app.obj.app.createList({
+			qDef: {
+				qFieldDefs: field
+			},
+			qInitialDataFetch : [{
+				qTop : 0,
+				qLeft : 0,
+				qHeight : (limit)?limit:500,
+				qWidth : 1
+			}]
+		}, function(reply) {
+			utility.log('createList:', 'Success!');
+			callback(reply.qListObject.qDataPages[0].qMatrix);
+		});
+	};
+	
 	// Add Google tracking
 	me.ga = function (title) {
 		ga('send', 'event', 'button', 'click', title, 1);

@@ -15,6 +15,7 @@ require.config({
     'directive.dropDown': scriptsUrl + 'js/directives/dropDown',
     'directive.exportToCsv': scriptsUrl + 'js/directives/exportToCsv',
     'directive.visualization': scriptsUrl + 'js/directives/visualization',
+    'directive.googleAnnotationChart': scriptsUrl + 'js/directives/googleAnnotationChart',
 	'service.api': scriptsUrl + 'js/services/api',
 	'service.utility': scriptsUrl + 'js/services/utilities'
   }
@@ -52,6 +53,7 @@ define([
     	'directive.dropDown',
     	'directive.exportToCsv',
         'directive.visualization',
+        'directive.googleAnnotationChart',
     	'bootstrap',
     ], function (document, qlik) {
     	app.obj.qlik = qlik;

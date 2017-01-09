@@ -79,7 +79,6 @@ div.qvobject.fifty {
 .container .row .btn {
   font-weight: bold;
   border-radius: 0;
-  text-transform: uppercase;
 }
 .container .row .btn.btn-success {
   background-color: #77b62a;

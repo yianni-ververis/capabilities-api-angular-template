@@ -28,12 +28,12 @@ app.obj.angularApp
             };
 
             me.def.link = function(scope, element, attrs) {
-                console.log(scope)
                 scope.items = {};
                 scope.currentItem = {
                     qText: scope.title
                 };
                 scope.$watch('dimension', function(newValue, oldValue) {
+                    scope.fontSize = (scope.fontSize) ? scope.fontSize : '14';
                     me.def.cssTemplate(scope);
                     api.getHyperCubeQ([newValue], []).then(function(data) {
                         scope.items = data;

@@ -62,4 +62,10 @@ A simple template to create a website with Angular js. It utilizes the Capabilit
 - <a href="https://community.qlik.com/blogs/qlikviewdesignblog/2016/06/24/angularjs-capabilities-api-dropdown-directive">Angularjs & Capabilities API - DropDown Directive</a>
 
 
+##### Examples for these tutorials are found in the playground
+- http://webapps.qlik.com/yianni/playground/index.html
+- https://github.com/yianni-ververis/capabilities-api-angular-template-playground
+
+
+
 <img src="preview.png">
